@@ -16,15 +16,28 @@ $(".time-block").each(function(){
 console.log("Time Block", hour);
 });
 
-$("#hour-9").find("textarea").val(localStorage.getItem("#hour-9"));
 
-// Saving tasks in local storage
-// document.querySelector(".saveBtn").addEventListener("click", 
-// $(localStorage.setItem("tasks", JSON.stringify(data))));
+
+for ( i =  9; i < 18; i++) {
+$("#hour-" + i).find("textarea").val(localStorage.getItem("hour-" + i));
+}
+
+// Saving tasks in local storage (PRACTICE CODE)
+// document.querySelector(".saveBtn").addEventListener("click", saveTask); 
+// var saveTask = localStorage.setItem("tasks", JSON.stringify(dutyText));
+// var dutyText = document.querySelector(".descriptor");
 // $(data) = document.querySelector(".description").nodeValue;
 // localStorage.setItem("tasks", JSON.stringify(data));
 
+// $("button").click(function() {
+//     $("textarea").data("task")});
+
 // Working code for just 9am slot
-var taskArray = document.querySelector(".description");
-function saveTask() {localStorage.setItem("tasks", JSON.stringify(taskArray.value))};
-document.querySelector(".saveBtn").addEventListener("click", saveTask);
+// var dutyText = document.querySelector(".description");
+$(".saveBtn").on("click", function() {
+    var dutyTime = $(this).parent().attr("id");
+    var dutyText = $(this).siblings(".description").val().trim();
+    // localStorage.setItem("tasks", JSON.stringify($("textarea")));
+    localStorage.setItem(dutyTime, dutyText);
+})
+
