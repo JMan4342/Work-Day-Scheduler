@@ -1,5 +1,4 @@
-// var now = moment();
-// var currentDay = document.querySelector("#currentDay");
+// Setting current date through Moment API
 $("#currentDay").text(moment().format("LL"));
 
 const currentHour = +moment().format("H");
@@ -17,4 +16,15 @@ $(".time-block").each(function(){
 console.log("Time Block", hour);
 });
 
-$(this).find("textarea").val(localStorage.getItem("#hour-9" + [i]));
+$("#hour-9").find("textarea").val(localStorage.getItem("#hour-9"));
+
+// Saving tasks in local storage
+// document.querySelector(".saveBtn").addEventListener("click", 
+// $(localStorage.setItem("tasks", JSON.stringify(data))));
+// $(data) = document.querySelector(".description").nodeValue;
+// localStorage.setItem("tasks", JSON.stringify(data));
+
+// Working code for just 9am slot
+var taskArray = document.querySelector(".description");
+function saveTask() {localStorage.setItem("tasks", JSON.stringify(taskArray.value))};
+document.querySelector(".saveBtn").addEventListener("click", saveTask);
