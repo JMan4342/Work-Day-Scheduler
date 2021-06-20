@@ -27,7 +27,7 @@ Below are images of my completed work day scheduler page.
 
 ## Resources
 
-I utilized the following sites to assist in creating my JavaScript quiz.
+I utilized the following sites to assist in creating my scheduler page.
 * https://momentjs.com
 * https://api.jquery.com
 
